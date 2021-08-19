@@ -1,0 +1,15 @@
+{
+    "name": "vrza/terminal-palette",
+    "description": "PHP library for using ANSI escape codes in the terminal",
+    "type": "library",
+    "keywords": ["php", "terminal", "palette", "ansi", "sequences", "escape", "codes"],
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "TerminalPalette\\": "src/"
+        }
+    }
+}
