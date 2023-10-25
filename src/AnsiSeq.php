@@ -48,13 +48,13 @@ class AnsiSeq
 
     public static function get(string $key, bool $always = true): string
     {
-        return $always ? constant('self::' . $key) : '';
+        if (!$always) return '';
+        $value = constant('self::' . $key);
+        return is_string($value) ? $value : '';
     }
 
-    public static function strip(string $str)
+    public static function strip(string $str): string
     {
-        return ($str === null)
-            ? null
-            : preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', '', $str);
+        return preg_replace('#\\x1b[[][^A-Za-z]*[A-Za-z]#', '', $str) ?? '';
     }
 }
